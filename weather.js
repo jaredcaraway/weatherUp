@@ -26,3 +26,5 @@ function toFahrenheit(temp) {
 		return "NO UNIT SPECIFIED!";
 	}
 }
+
+$.ajax();
