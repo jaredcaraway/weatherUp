@@ -4,7 +4,15 @@ var temp = {
 }
 
 function toCelsius(temp) {
-
+	if (temp.unit === "kelvin") {
+		temp.unit = "celsius";
+		return (temp.number - 273.15).toPrecision(2);
+	} else if (temp.unit === "fahrenheit") {
+		temp.unit = "celsius";
+		return ((temp.number - 32) * (5/9)).toPrecision(2);
+	} else {
+		return "NO UNIT SPECIFIED!";
+	}
 }
 
 function toFahrenheit(temp) {
