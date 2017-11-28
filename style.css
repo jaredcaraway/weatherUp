@@ -4,5 +4,10 @@ html {
 
 body {
 	font-size: 4rem;
-	font-family: "Love Ya Like A Sister", courier;
+	font-family: "Playfair Display", Courier;
 }
+
+h1 {
+	font-family: "Love Ya Like A Sister", Georgia, "Times New Roman";
+}
+
