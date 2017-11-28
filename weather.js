@@ -34,8 +34,8 @@ $(document).ready(function() {
 			alert("Request failed!");
 		},
 		success: function(data) {
-			alert("Reached API!");
-			alert(data);
+			// alert("Reached API!");
+			// alert(data);
 		}
 	});
 });
