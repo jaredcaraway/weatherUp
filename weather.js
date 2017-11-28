@@ -3,6 +3,12 @@ $(document).ready(function() {
 		number: null,
 		unit: null
 	};
+	var weatherIcon = document.querySelector("#weatherIcon div");
+	var location = document.querySelector("#location div");
+	var weatherInfo = document.querySelector("#weatherInfo div");
+	var temperature = document.querySelector("#temperature div");
+	var convert = document.querySelector("#convert div");
+	var description = document.querySelector("#description div");
 
 	function toCelsius(temp) {
 		if (temp.unit === "kelvin") {
