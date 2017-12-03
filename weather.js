@@ -3,6 +3,12 @@ $(document).ready(function() {
 		number: null,
 		unit: null
 	};
+
+	var myLocation = {
+		latitude: null,
+		longitude: null
+	}
+
 	var weatherIcon = document.querySelector("#weatherIcon div");
 	var location = document.querySelector("#location div");
 	var weatherInfo = document.querySelector("#weatherInfo div");
@@ -34,14 +40,32 @@ $(document).ready(function() {
 		}
 	}
 
-	$.ajax({
-		url: "https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139",
-		error: function() {
-			alert("Request failed!");
+	var getLocation = function() {
+		return new Promise(function(resolve, reject) {
+			navigator.geolocation.getCurrentPosition(resolve, reject);
+		});
+	}
+
+	function getWeather(position) {
+			$.ajax({
+			url: "https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139",
+			error: function() {
+				alert("Request failed!");
+			},
+			success: function(data) {
+				
+			}
+		});
+	}
+
+	if (navigator.geolocation) {
+		getLocation().then((position) => {
+			getWeather(position);
 		},
-		success: function(data) {
-			// alert("Reached API!");
-			// alert(data);
-		}
-	});
+		function(err) {
+			document.body.innerHTML = "Failed!";
+		});
+	} else {
+		alert("Geolocation disabled!");
+	}
 });
