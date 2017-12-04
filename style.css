@@ -12,3 +12,14 @@ h1 {
 	font-family: "Love Ya Like A Sister", Georgia, "Times New Roman";
 }
 
+.btn {
+	width: 100%;
+}
+
+.container {
+	width: 60%;
+}
+
+#title h1 {
+	text-align: center;
+}
